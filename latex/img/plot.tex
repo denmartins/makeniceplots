@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+  \definecolor{dtcolor}{rgb}{0.498,0.749,0.482}
+  \definecolor{rfcolor}{rgb}{0.686,0.55,0.764}
+  %
+  \begin{semilogxaxis}[ymin = 0, ymax=1000, enlargelimits={abs=0.5},%
+    xlabel = {Dataset size (log scale)}, ylabel = {Time (in seconds)},%
+    axis lines*=left, grid=major, % 
+    grid style={line width=.1pt, draw=gray!10}, %
+    legend style={at={(0.05,0.9)}, anchor=west, legend columns=0}]
+    %
+    \addplot[line width=2pt, dashed, color=dtcolor] %
+      table[x=countInstances,y=totalTime,col sep=semicolon]{data/dt_features_50_exprmnt.csv};
+    \addplot[line width=2pt, solid, color=rfcolor] %
+      table[x=countInstances,y=totalTime,col sep=semicolon]{data/rf_features_50_exprmnt.csv};
+    \legend{DT, RF}
+    %
+  \end{semilogxaxis}
+\end{tikzpicture}
