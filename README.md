@@ -1,5 +1,5 @@
 # makeniceplots
-Useful code for making nice python plots
+Useful code for making nice Python and LaTeX plots.
 
 # resources
 
